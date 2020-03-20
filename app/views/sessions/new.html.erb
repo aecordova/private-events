@@ -1,0 +1,6 @@
+<h1>Enter email to log in:</h1>
+<%= form_with url: sessions_path do |f| %>
+  <%= f.label :email %>
+  <%= f.text_field:email %>
+  <%= f.submit "Log In" %>
+<% end %>
