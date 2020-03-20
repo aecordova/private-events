@@ -9,5 +9,12 @@ class SessionsController < ApplicationController
       render 'new'
     end
   end
+
+  def destroy
+    if logged_in?
+      logout
+    end
+    redirect_to login_path
+  end
 end
 
