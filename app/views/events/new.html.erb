@@ -1,0 +1,12 @@
+<h1>Enter Event Information:</h1>
+<%= form_with model: Event.new do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :date %>
+  <%= f.date_field :date %>
+  <%= f.label :place %>
+  <%= f.text_field :place %>
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+  <%= f.submit "Create Event" %>
+<% end %>

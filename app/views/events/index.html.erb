@@ -1,0 +1,18 @@
+
+<h1>Events:</h1>
+
+<section>
+  <h3>All Events:</h3>
+  <table>
+    <tr>
+      <th>Name</th><th>Place</th><th>Date</th>
+    </tr>
+    <% @all_events.each do |e| %>
+      <tr>
+        <td><%= e.name %></td>
+        <td><%= e.place %></td>
+        <td><%= e.date %></td>
+      </tr>
+    <% end %>
+  </table>
+</section>
