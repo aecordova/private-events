@@ -6,18 +6,16 @@
   Email: <%= @user.email %>
 </section>
 <section>
-  <h3>Organized Events:</h3>
-  <table>
-    <tr>
-      <th>Name</th><th>Place</th><th>Date</th>
-    </tr>
-    <% @user.organized_events.each do |e| %>
-      <tr>
-        <td><%= e.name %></td>
-        <td><%= e.place %></td>
-        <td><%= e.date %></td>
-      </tr>
-    <% end %>
-  </table>
-
+  <h2>Organized Events:</h2>
+  <%= render partial: 'shared/events', locals: { section_title: 'Past:', 
+                                                events: @user.organized_events.past } %>
+  <%= render partial: 'shared/events', locals: { section_title: 'Upcoming:', 
+                                                events: @user.organized_events.upcoming } %>
+</section>
+<section>
+  <h2>Attending Events:</h2>
+  <%= render partial: 'shared/events', locals: { section_title: 'Past:', 
+                                                events: @user.attended_events.past } %>
+  <%= render partial: 'shared/events', locals: { section_title: 'Upcoming:', 
+                                                events: @user.attended_events.upcoming } %>
 </section>
